@@ -1,0 +1,21 @@
+url	fetched	text_sha256	text
+https://arxiv.org/html/2411.00640	2026-09-30	6bf5f4435c7b8ca9dff5b439f526c36d5d57c334affbe312857d63ccfab919da	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2509.08825	2026-09-30	ba7b4f5fee1dd55da81afb7bb241d171ac384c91e7669700b4a355b190bf74d8	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2604.01518	2026-09-30	a8a01d956214882f8abb579aa4e52a90be3067210d97c56d28683cd0381851f8	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2605.29800	2026-09-30	984db764ff962d4c39b32d3db884c2d3b7e473486522089d34f9f013289594e9	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2606.09863	2026-09-30	b61bab4b7efccd411b3c9bf6f31539ec0e5e3df70a0a6c0134d65f786644ed79	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2606.18471	2026-09-30	0b9833da7e6ac5d575853b63aed65d46f7b5b475446e522dce827eb76224e599	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2607.20527	2026-09-30	403dd10559a8e7790935d1b3ac0ab01542ab2221c6ead0f09cd5d841bf1aef6b	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2607.21763	2026-09-30	b4289528a96b8109337c43ea73a440aef4af5939c4acaa4589c80614ef361a94	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2608.00794	2026-09-30	5496dc39254d558ff9b73cf30c69ad638e0e36fb759236dc3eb55f5f44bafb9d	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2608.08266	2026-09-30	e986397647e4d6b30e39185cb0f6c9ace4c68fd6ec35b2d30dc7cfd00c282342	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2608.24306	2026-09-30	9ba1d24be19a585e354c885e2285d5e55b14a2c6035fa76e9c8d7c114765e394	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2609.08589	2026-09-30	11744d03f645d3bb572214d17c93475348f79f05b609bd429d2237877f138318	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2609.20211	2026-09-30	f7a31b3e23a377958191e4b1c8095b43eaf68dfba39fc9aac9123342d3d4942b	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2609.20812	2026-09-30	2db3bd7c4215380f0c987a8968f1686cf0b3b1897698590407aebb20f418e5af	arXiv HTML full text, tags stripped
+https://arxiv.org/html/2609.24967	2026-09-30	7bc1139dfd285929a36164490f8232de529949d9f6217858f6b252a64eb21841	arXiv HTML full text, tags stripped
+https://api.crossref.org/works/10.1002/smr.70034	2026-09-30	50f57745fa96d78daeccae872b1e953b37304a96c17234fa3c18b448535914ab	Crossref abstract
+https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/	2026-09-30	6e65af13dd82658c5333ae051d5d01db444a640b82aba93fa766bc0f1213fcee	web page, tags stripped
+https://web.archive.org/web/20260929062831/https://openai.com/index/hugging-face-incident-and-the-road-ahead/	2026-09-30	c844c3fe24c3b83addaa1927070dab48a59b250febf188f9dc96504b78cab2fe	Wayback Machine capture, tags stripped
+https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12042776/fullTextXML	2026-09-30	f83571b35ecb2fcf7daaa29ff378563bc6e0cb24f5c7025aa94f00892dcb1783	Europe PMC full-text XML, tags stripped
+https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/	2026-09-30	79ece16e35db8805dea3fff1296793c2c9ed6a1be24d66e0f37aa0c31847095b	web page, tags stripped

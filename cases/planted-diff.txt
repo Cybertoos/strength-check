@@ -1,0 +1,23 @@
+p01 r19 scope: - (Llama-3.1-8B)
+p02 r22 range_upper: - "4.2%-9.0%" + "9.0%"
+p03 r22 scope: - "4.2%-9.0%" + "4.2%-9.0%". - for - top-10 - agents.
+p04 r23 hedge: - about
+p05 r24 hedge: - approximately
+p06 r24 scope: - half + half; - for - small - models;
+p07 r24 sample: - 37 - tasks - from - 21 - studies,
+p08 r25 hedge: - "nearly - five + "five
+p09 r25 range_upper: - 26-73% + 73%
+p10 r25 scope: - overgeneralized + overgeneralized; - in - 26-73% - of - cases;
+p11 r25 sample: - 4,900 - summaries,
+p12 r26 range_upper: - 7 - to
+p13 r27 hedge: - about
+p14 r27 range_upper: - 0.27 - to
+p15 r27 scope: - 18%" + 18%"; - depending - on - verifier - strictness;
+p16 r28 hedge: - at - most
+p17 r28 scope: - 2/3 + 2/3. - (binary - scores, - uniform - difficulty).
+p18 r29 scope: - divergence + divergence. - at - token - 103.
+p19 r29 sample: - 1000 - completions - at - temperature - 0:
+p20 r30 scope: - (standard)
+p21 r32 hedge: - "roughly - 30-40%" + "30-40%"
+p22 r32 range_upper: - 30-40%" + 40%"
+p23 r32 scope: - with - the - intended - vulnerability
