@@ -8,6 +8,7 @@ Replies: 104 records, 1 with no valid verdict after one retry: [('r26', 'openai/
 - flag: 3 of 9 (33%, 95% CI 12 to 65%)
 - ask a person: 6 of 9 (67%, 95% CI 35 to 88%)
 - flag or ask a person: 9 of 9 (100%, 95% CI 70 to 100%)
+- of those, asked a person: 6 of 9
 - qwen/qwen3.8-27b: claims_more 8 of 9 (89%, 95% CI 56 to 98%); all verdicts {'claims_more': 8, 'cannot_tell': 1}
 - openai/gpt-oss-20b: claims_more 3 of 9 (33%, 95% CI 12 to 65%); all verdicts {'cannot_tell': 2, 'claims_more': 3, 'claims_less': 2, 'matches': 2}
 
@@ -15,6 +16,7 @@ Replies: 104 records, 1 with no valid verdict after one retry: [('r26', 'openai/
 - flag: 7 of 23 (30%, 95% CI 16 to 51%)
 - ask a person: 12 of 23 (52%, 95% CI 33 to 71%)
 - flag or ask a person: 19 of 23 (83%, 95% CI 63 to 93%)
+- of those, asked a person: 12 of 19
 - qwen/qwen3.8-27b: claims_more 15 of 23 (65%, 95% CI 45 to 81%); all verdicts {'claims_less': 5, 'claims_more': 15, 'matches': 2, 'cannot_tell': 1}
 - openai/gpt-oss-20b: claims_more 11 of 23 (48%, 95% CI 29 to 67%); all verdicts {'claims_more': 11, 'matches': 8, 'claims_less': 4}
 
@@ -22,6 +24,7 @@ Replies: 104 records, 1 with no valid verdict after one retry: [('r26', 'openai/
 - flag: 2 of 13 (15%, 95% CI 4 to 42%)
 - ask a person: 8 of 13 (62%, 95% CI 36 to 82%)
 - flag or ask a person: 10 of 13 (77%, 95% CI 50 to 92%)
+- of those, asked a person: 8 of 10
 - qwen/qwen3.8-27b: claims_more 10 of 14 (71%, 95% CI 45 to 88%); all verdicts {'claims_more': 10, 'matches': 2, 'claims_less': 2}
 - openai/gpt-oss-20b: claims_more 3 of 13 (23%, 95% CI 8 to 50%); all verdicts {'claims_less': 4, 'matches': 6, 'claims_more': 3}
 

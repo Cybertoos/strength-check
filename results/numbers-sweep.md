@@ -47,17 +47,17 @@ A case is left out of a pair when either arm has no valid verdict on it.
 
 | Pair | Real stronger | Planted | Controls |
 |---|---|---|---|
-| qwen-none + qwen-low | 8 / 1 / 0 of 9; flag or ask 9 | 14 / 6 / 3 of 23; flag or ask 20 | 8 / 3 / 3 of 14; flag or ask 11 |
-| qwen-none + gptoss-high | 4 / 1 / 0 of 5; flag or ask 5 | 6 / 9 / 1 of 16; flag or ask 15 | 3 / 6 / 4 of 13; flag or ask 9 |
-| qwen-none + glm4 | 7 / 2 / 0 of 9; flag or ask 9 | 7 / 10 / 6 of 23; flag or ask 17 | 6 / 4 / 4 of 14; flag or ask 10 |
-| qwen-none + phi4 | 6 / 2 / 0 of 8; flag or ask 8 | 8 / 10 / 5 of 23; flag or ask 18 | 3 / 5 / 4 of 12; flag or ask 8 |
-| gptoss-low + qwen-low | 3 / 6 / 0 of 9; flag or ask 9 | 10 / 10 / 3 of 23; flag or ask 20 | 3 / 5 / 5 of 13; flag or ask 8 |
-| gptoss-low + gptoss-high | 2 / 3 / 0 of 5; flag or ask 5 | 6 / 6 / 4 of 16; flag or ask 12 | 2 / 2 / 8 of 12; flag or ask 4 |
-| gptoss-low + glm4 | 3 / 5 / 1 of 9; flag or ask 8 | 4 / 12 / 7 of 23; flag or ask 16 | 1 / 7 / 5 of 13; flag or ask 8 |
-| gptoss-low + phi4 | 3 / 4 / 1 of 8; flag or ask 7 | 6 / 10 / 7 of 23; flag or ask 16 | 1 / 4 / 7 of 12; flag or ask 5 |
-| qwen-low + gptoss-high | 4 / 1 / 0 of 5; flag or ask 5 | 10 / 5 / 1 of 16; flag or ask 15 | 3 / 5 / 5 of 13; flag or ask 8 |
-| qwen-low + glm4 | 8 / 1 / 0 of 9; flag or ask 9 | 8 / 12 / 3 of 23; flag or ask 20 | 5 / 5 / 4 of 14; flag or ask 10 |
-| qwen-low + phi4 | 7 / 1 / 0 of 8; flag or ask 8 | 10 / 10 / 3 of 23; flag or ask 20 | 3 / 4 / 5 of 12; flag or ask 7 |
-| gptoss-high + glm4 | 4 / 1 / 0 of 5; flag or ask 5 | 3 / 10 / 3 of 16; flag or ask 13 | 2 / 4 / 7 of 13; flag or ask 6 |
-| gptoss-high + phi4 | 3 / 2 / 0 of 5; flag or ask 5 | 5 / 6 / 5 of 16; flag or ask 11 | 2 / 2 / 8 of 12; flag or ask 4 |
-| glm4 + phi4 | 7 / 1 / 0 of 8; flag or ask 8 | 7 / 6 / 10 of 23; flag or ask 13 | 3 / 2 / 7 of 12; flag or ask 5 |
+| qwen-none + qwen-low | 8 / 1 / 0 of 9; flag or ask 9 of 9 | 14 / 6 / 3 of 23; flag or ask 20 of 23 | 8 / 3 / 3 of 14; flag or ask 11 of 14 |
+| qwen-none + gptoss-high | 4 / 1 / 0 of 5; flag or ask 5 of 5 | 6 / 9 / 1 of 16; flag or ask 15 of 16 | 3 / 6 / 4 of 13; flag or ask 9 of 13 |
+| qwen-none + glm4 | 7 / 2 / 0 of 9; flag or ask 9 of 9 | 7 / 10 / 6 of 23; flag or ask 17 of 23 | 6 / 4 / 4 of 14; flag or ask 10 of 14 |
+| qwen-none + phi4 | 6 / 2 / 0 of 8; flag or ask 8 of 8 | 8 / 10 / 5 of 23; flag or ask 18 of 23 | 3 / 5 / 4 of 12; flag or ask 8 of 12 |
+| gptoss-low + qwen-low | 3 / 6 / 0 of 9; flag or ask 9 of 9 | 10 / 10 / 3 of 23; flag or ask 20 of 23 | 3 / 5 / 5 of 13; flag or ask 8 of 13 |
+| gptoss-low + gptoss-high | 2 / 3 / 0 of 5; flag or ask 5 of 5 | 6 / 6 / 4 of 16; flag or ask 12 of 16 | 2 / 2 / 8 of 12; flag or ask 4 of 12 |
+| gptoss-low + glm4 | 3 / 5 / 1 of 9; flag or ask 8 of 9 | 4 / 12 / 7 of 23; flag or ask 16 of 23 | 1 / 7 / 5 of 13; flag or ask 8 of 13 |
+| gptoss-low + phi4 | 3 / 4 / 1 of 8; flag or ask 7 of 8 | 6 / 10 / 7 of 23; flag or ask 16 of 23 | 1 / 4 / 7 of 12; flag or ask 5 of 12 |
+| qwen-low + gptoss-high | 4 / 1 / 0 of 5; flag or ask 5 of 5 | 10 / 5 / 1 of 16; flag or ask 15 of 16 | 3 / 5 / 5 of 13; flag or ask 8 of 13 |
+| qwen-low + glm4 | 8 / 1 / 0 of 9; flag or ask 9 of 9 | 8 / 12 / 3 of 23; flag or ask 20 of 23 | 5 / 5 / 4 of 14; flag or ask 10 of 14 |
+| qwen-low + phi4 | 7 / 1 / 0 of 8; flag or ask 8 of 8 | 10 / 10 / 3 of 23; flag or ask 20 of 23 | 3 / 4 / 5 of 12; flag or ask 7 of 12 |
+| gptoss-high + glm4 | 4 / 1 / 0 of 5; flag or ask 5 of 5 | 3 / 10 / 3 of 16; flag or ask 13 of 16 | 2 / 4 / 7 of 13; flag or ask 6 of 13 |
+| gptoss-high + phi4 | 3 / 2 / 0 of 5; flag or ask 5 of 5 | 5 / 6 / 5 of 16; flag or ask 11 of 16 | 2 / 2 / 8 of 12; flag or ask 4 of 12 |
+| glm4 + phi4 | 7 / 1 / 0 of 8; flag or ask 8 of 8 | 7 / 6 / 10 of 23; flag or ask 13 of 23 | 3 / 2 / 7 of 12; flag or ask 5 of 12 |

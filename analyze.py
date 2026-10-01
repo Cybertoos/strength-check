@@ -78,6 +78,7 @@ def main():
         say(f"- flag: {wilson(ds.count('flag'), len(ds))}")
         say(f"- ask a person: {wilson(ds.count('person'), len(ds))}")
         say(f"- flag or ask a person: {wilson(caught, len(ds))}")
+        say(f"- of those, asked a person: {ds.count('person')} of {caught}")
         for m in MODELS:
             ms = [v.get((c["id"], m)) for c in cs if v.get((c["id"], m))]
             say(f"- {m}: claims_more {wilson(ms.count('claims_more'), len(ms))}; all verdicts {dict(Counter(ms))}")

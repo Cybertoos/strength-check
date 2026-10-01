@@ -98,7 +98,7 @@ def main():
         for ids in sets.values():
             ds = [decide(v[x][i], v[y][i]) for i in ids if v[x].get(i) and v[y].get(i)]
             caught = sum(d != "pass" for d in ds)
-            cells.append(f"{ds.count('flag')} / {ds.count('person')} / {ds.count('pass')} of {len(ds)}; flag or ask {caught}")
+            cells.append(f"{ds.count('flag')} / {ds.count('person')} / {ds.count('pass')} of {len(ds)}; flag or ask {caught} of {len(ds)}")
         say(f"| {x} + {y} | " + " | ".join(cells) + " |")
 
     text = "\n".join(out) + "\n"
