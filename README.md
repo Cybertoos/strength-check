@@ -4,7 +4,9 @@ AI tools that write literature notes usually cite real papers. The failure is qu
 
 ## Result
 
-No, not yet. On 9 real overstated lines and 13 lines that match their source, the two-model checker flagged 3 of the overstated lines and 2 of the matching ones. Counting the lines it sent to a person, it caught all 9 overstated lines, but it also sent or flagged 10 of the 13 matching ones. Qwen3.8-27B called 8 of 9 overstated lines and 10 of 14 matching lines "claims more". The two models agreed on 39% of cases. Details and intervals: `RESULTS.md`.
+First run, no, not yet. On 9 real overstated lines and 13 lines that match their source, the two-model checker flagged 3 of the overstated lines and 2 of the matching ones. Counting the lines it sent to a person, it caught all 9 overstated lines, but it also sent or flagged 10 of the 13 matching ones. Qwen3.8-27B called 8 of 9 overstated lines and 10 of 14 matching lines "claims more". The two models agreed on 39% of cases.
+
+A sweep of four more local settings on the same cases (`PLAN-sweep.md`, `sweep.py`) found a lead: phi-4 called 7 of 9 overstated lines and 3 of 14 matching lines "claims more". It is the best of six arms on cases already seen, so it needs new cases labelled by a person before it means anything. Details and intervals: `RESULTS.md`.
 
 The labels come from one model verifier, not people. Some of the checker's false alarms name a real dropped condition; a person has to decide those.
 

@@ -1,6 +1,6 @@
 # Results
 
-Run on 2026-09-30 on one Mac, both models in LM Studio, one request at a time. Every number here is printed by `analyze.py` into `results/numbers.md`. The plan, fixed before the run: `PLAN.md`. Changes since: `DEVIATIONS.md`.
+Run on 2026-09-30 on one Mac, both models in LM Studio, one request at a time. Every number here is printed by `analyze.py` into `results/numbers.md`, or for the sweep by `analyze_sweep.py` into `results/numbers-sweep.md`. The plan, fixed before the run: `PLAN.md`. Changes since: `DEVIATIONS.md`.
 
 ## Headline
 
@@ -52,7 +52,8 @@ The plan set no expectation for controls sent to a person. At 8 of 13 it is the 
 ## What this cannot show
 
 - The labels come from one model verifier, not people. The case builder disputed two of them (notes on r13 and r32).
-- 29 real lines from one set of notes on one topic. The intervals are wide.
+- 29 real lines from seven notes written in one session on one topic, several citing the same paper. The intervals are wide.
+- Three real cases were removed after the run (DEVIATIONS item 1), two of them overstated lines, so the real overstated set went from 11 to 9.
 - The 23 planted edits come from 11 holding lines, up to four from one line, so they are not independent. Their intervals are too narrow.
 - Planted edits are rule-based; some drop a detail without widening the claim (listed in `cases/planted-diff.txt`). The 83% planted catch comes mostly from lines sent to a person (12 of 19).
 - Two small local models, one prompt, one setting each. It says nothing about larger models.
@@ -73,16 +74,16 @@ Run on the night of 2026-09-30 to 2026-10-01, same 52 cases, same prompt, plan f
 
 Rates count only cases with a valid verdict, so the denominators differ between arms. Separation is the rate on real overstated lines minus the rate on controls; its interval is Newcombe's hybrid score method.
 
-- **The plan's expectation failed.** It expected no arm to separate by more than 30 points. Three did: Qwen at low effort, GLM-4-32B and phi-4. All three intervals are wide.
-- **Reasoning moved Qwen's threshold, not its judgement.** At low effort it says "claims more" on more of everything: 9 of 9 real overstated lines (the ceiling), 19 of 23 planted lines (from 15), 9 of 14 controls (from 10). Its controls barely moved.
+- **The plan's expectation failed.** It expected no arm to separate by more than 30 points. Four did: Qwen at low effort, gpt-oss-20b at high effort, GLM-4-32B and phi-4. All four intervals are wide; Qwen's starts at 0, and gpt-oss-20b's rests on 5 overstated lines (below).
+- **Reasoning helped Qwen on overstated lines, not on controls.** At low effort it says "claims more" on 9 of 9 real overstated lines (from 8, the ceiling) and 19 of 23 planted lines (from 15), and on 9 of 14 controls (from 10). One run each, so whether this is a change in judgement or chance is not tested.
 - **gpt-oss-20b at high effort is not usable at this budget.** 13 of 52 replies hit the 8,000-token cap twice with no answer, 4 of them real overstated lines. Its +57 rests on the 5 real overstated lines it finished. Whether those are easier or harder than the rest is unknown, so its numbers cannot be compared with the others.
-- **phi-4 met the plan's surprise bar, narrowly, and that is not yet a finding.** It said "claims more" on 7 of 9 real overstated lines and 3 of 14 controls (bar: at least 7 and at most 4). Three replies failed validation (wrong field values, not the token cap): one real overstated line and two controls. Had both controls been "claims more", it would miss the bar. It said "claims more" on only 11 of 23 planted lines.
+- **phi-4 met the plan's surprise bar, narrowly, and that is not yet a finding.** The plan's bar counts all 9 overstated lines and all 14 controls, with an invalid reply counted as not "claims more": phi-4 had 7 of 9 and 3 of 14 (bar: at least 7 and at most 4). Over valid replies only, as in the table, that is 7 of 8 and 3 of 12. Three replies failed validation (wrong field values, not the token cap): one real overstated line and two controls. Had both controls been "claims more", it would miss the bar. It said "claims more" on only 11 of 23 planted lines.
 - **GLM-4-32B** flags 6 of 14 controls and only 9 of 23 planted lines.
-- **Two-model rule, by controls sent on.** Picked after the run, the pair of different models that sends the fewest controls to a flag or a person is GLM-4-32B with phi-4: 5 of 12, against 10 of 13 in the first run. It still sends 8 of 8 real overstated lines on (7 flagged, 1 to a person). It passes 10 of 23 planted lines. A case drops out of a pair when either model has no valid verdict, hence 8 and 12.
+- **Two-model rule, by controls sent on.** Picked after the run: among pairs of different models whose arms both have at most 10% invalid replies, the fewest controls go to a flag or a person with GLM-4-32B and phi-4 (5 of 12) and with gpt-oss-20b at low effort and phi-4 (also 5 of 12), against 10 of 13 in the first run. gpt-oss-20b at high effort with phi-4 sends 4 of 12, but that arm has 13 of 52 invalid replies and only 5 valid overstated lines. GLM-4-32B with phi-4 still sends 8 of 8 real overstated lines on (7 flagged, 1 to a person). It passes 10 of 23 planted lines. A case drops out of a pair when either model has no valid verdict, hence 8 and 12.
 
 ### What changes
 
-The first run's answer was "it moves reading to a person, it does not save it". On the sweep, three arms separate real overstated lines from controls by more than the first run did. phi-4, alone or paired with GLM-4-32B, separates most. That is one result picked from four arms and fourteen pairs, on 9 overstated lines and 14 controls, so the best of them is favoured by chance. It is a lead to test on new cases labelled by a person, not a result. The weak planted catch (under half for GLM-4-32B and phi-4) says the gain does not come from reading the qualifiers that `plant.py` removes.
+The first run's answer was that the checker moves reading to a person instead of saving it. On the sweep, three usable arms separate real overstated lines from controls by more than the first run did. phi-4, alone or paired with GLM-4-32B, separates most. That is one result picked from six arms and fourteen pairs, on the same 9 overstated lines and 14 controls the first run was judged on, with no held-out cases, so the best of them is favoured by chance. It is a lead to test on new cases labelled by a person, not a result. The weak planted catch (under half for GLM-4-32B and phi-4) suggests the gain does not come from reading the qualifiers that `plant.py` removes; this is not tested.
 
 ### What the sweep cannot show
 
