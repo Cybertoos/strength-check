@@ -57,3 +57,33 @@ The plan set no expectation for controls sent to a person. At 8 of 13 it is the 
 - Planted edits are rule-based; some drop a detail without widening the claim (listed in `cases/planted-diff.txt`). The 83% planted catch comes mostly from lines sent to a person (12 of 19).
 - Two small local models, one prompt, one setting each. It says nothing about larger models.
 - Retrieval was not tested.
+
+## Sweep: other settings and models
+
+Run on the night of 2026-09-30 to 2026-10-01, same 52 cases, same prompt, plan fixed before the run: `PLAN-sweep.md`. Numbers from `analyze_sweep.py` into `results/numbers-sweep.md`. Nothing was changed after the sweep started.
+
+| Arm | "Claims more" on real overstated lines | On controls | Separation, points (95% CI) | Invalid replies |
+|---|---|---|---|---|
+| Qwen3.8-27B, no reasoning (first run) | 8 of 9 | 10 of 14 | +17 (-19 to +45) | 0 of 52 |
+| gpt-oss-20b, low (first run) | 3 of 9 | 3 of 13 | +10 (-24 to +45) | 1 of 52 |
+| Qwen3.8-27B, low | 9 of 9 | 9 of 14 | +36 (0 to +61) | 0 of 52 |
+| gpt-oss-20b, high | 4 of 5 | 3 of 13 | +57 (+7 to +79) | 13 of 52 |
+| GLM-4-32B | 8 of 9 | 6 of 14 | +46 (+5 to +69) | 0 of 52 |
+| phi-4 | 7 of 8 | 3 of 12 | +62 (+18 to +82) | 3 of 52 |
+
+Rates count only cases with a valid verdict, so the denominators differ between arms. Separation is the rate on real overstated lines minus the rate on controls; its interval is Newcombe's hybrid score method.
+
+- **The plan's expectation failed.** It expected no arm to separate by more than 30 points. Three did: Qwen at low effort, GLM-4-32B and phi-4. All three intervals are wide.
+- **Reasoning moved Qwen's threshold, not its judgement.** At low effort it says "claims more" on more of everything: 9 of 9 real overstated lines (the ceiling), 19 of 23 planted lines (from 15), 9 of 14 controls (from 10). Its controls barely moved.
+- **gpt-oss-20b at high effort is not usable at this budget.** 13 of 52 replies hit the 8,000-token cap twice with no answer, 4 of them real overstated lines. Its +57 rests on the 5 real overstated lines it finished. Whether those are easier or harder than the rest is unknown, so its numbers cannot be compared with the others.
+- **phi-4 met the plan's surprise bar, narrowly, and that is not yet a finding.** It said "claims more" on 7 of 9 real overstated lines and 3 of 14 controls (bar: at least 7 and at most 4). Three replies failed validation (wrong field values, not the token cap): one real overstated line and two controls. Had both controls been "claims more", it would miss the bar. It said "claims more" on only 11 of 23 planted lines.
+- **GLM-4-32B** flags 6 of 14 controls and only 9 of 23 planted lines.
+- **Two-model rule, by controls sent on.** Picked after the run, the pair of different models that sends the fewest controls to a flag or a person is GLM-4-32B with phi-4: 5 of 12, against 10 of 13 in the first run. It still sends 8 of 8 real overstated lines on (7 flagged, 1 to a person). It passes 10 of 23 planted lines. A case drops out of a pair when either model has no valid verdict, hence 8 and 12.
+
+### What changes
+
+The first run's answer was "it moves reading to a person, it does not save it". On the sweep, three arms separate real overstated lines from controls by more than the first run did. phi-4, alone or paired with GLM-4-32B, separates most. That is one result picked from four arms and fourteen pairs, on 9 overstated lines and 14 controls, so the best of them is favoured by chance. It is a lead to test on new cases labelled by a person, not a result. The weak planted catch (under half for GLM-4-32B and phi-4) says the gain does not come from reading the qualifiers that `plant.py` removes.
+
+### What the sweep cannot show
+
+Everything under "What this cannot show" above still holds, including that the 23 planted lines come from 11 holding lines and are not independent. Also: gpt-oss-20b at high effort ran out of tokens on a quarter of the cases, in unknown direction; GLM-4-32B and phi-4 ran with no reasoning setting; all arms ran on the same cases, so the arms are not independent samples.
