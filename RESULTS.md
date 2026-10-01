@@ -4,7 +4,7 @@ Run on 2026-09-30 on one Mac, both models in LM Studio, one request at a time. E
 
 ## Headline
 
-In the first run, the checker did not separate lines that overstate their source from lines that match it (the sweep below found a lead). It caught every real overstated line only because it sent most lines of every kind to a person.
+In the first run, the checker did not separate lines that overstate their source from lines that match it (the sweep below found a lead). It caught every real overstated line, but 6 of the 9 only by sending them to a person, and it sent most lines of every kind to a person.
 
 | Set | Flag (both models) | Ask a person | Flag or ask |
 |---|---|---|---|
@@ -61,6 +61,9 @@ The plan set no expectation for controls sent to a person. At 8 of 13 it is the 
 - The labeller read the full papers; the checker saw 1 to 4 sentences. A line can hold against the paper and still look stronger than its passage.
 - Planted edits are easier than real overstatement, so the planted catch is an upper bound for real use (PLAN.md).
 - Retrieval was not tested.
+- Model builds, quantisation and the LM Studio version were not recorded; only model names are.
+- The prompt was tried on three examples written for the purpose before the run (PLAN.md), not on the cases.
+- The three removed cases (DEVIATIONS item 1) were removed because their text names the author's private projects, not for their verdicts.
 
 ## Sweep: other settings and models
 

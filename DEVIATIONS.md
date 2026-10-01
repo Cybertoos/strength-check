@@ -6,7 +6,7 @@ Items 1 to 4 dated 2026-09-30, after the first run; items 5 to 8 dated 2026-10-0
 2. **Full source texts not published.** The plan names `cases/sources/`, the saved text of each source. Most sources do not allow redistribution, so the repo ships only the passages in `cases/real.jsonl` and, in `cases/SOURCES.tsv`, each source's URL, fetch date and the SHA-256 of the text extracted from it.
 3. **Labeller notes replaced.** The labeller's working notes are not published. Three cases carry a short plain note instead: r03 (a line whose direction is mixed) and r13 and r32 (labels the case builder disputed; the labels are kept as the labeller made them).
 4. **Run-to-run count.** The plan draws 20 cases with seed 5 from the 55 cases run; `analyze.py --pick` reproduces the draw. r08 is one of them and is removed (item 1), so 19 cases are reported. One pair, r26 on gpt-oss-20b, had no valid verdict in either run and is left out of the repeat count.
-5. **One planting rule never applied.** PLAN.md lists widening a quantifier ("some" or "several" to "all", "one study" to "studies"). No holding line had a match, so it produced no planted case. The planted set has four operators: scope phrase 9, hedge 6, range upper end 5, sample size 3.
+5. **One planting rule never applied.** PLAN.md lists widening a quantifier ("some" or "several" to "all", "one study" to "studies"). No holding line had a match, so it produced no planted case. This was visible in `cases/planted-diff.txt` on 2026-09-30 but recorded only on 2026-10-01, after a review caught it. The planted set has four operators: scope phrase 9, hedge 6, range upper end 5, sample size 3.
 
 ## Sweep, 2026-10-01, after the sweep ran
 
