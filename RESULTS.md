@@ -4,7 +4,7 @@ Run on 2026-09-30 on one Mac, both models in LM Studio, one request at a time. E
 
 ## Headline
 
-The checker did not separate lines that overstate their source from lines that match it. It caught every real overstated line only because it sent most lines of every kind to a person.
+In the first run, the checker did not separate lines that overstate their source from lines that match it (the sweep below found a lead). It caught every real overstated line only because it sent most lines of every kind to a person.
 
 | Set | Flag (both models) | Ask a person | Flag or ask |
 |---|---|---|---|
@@ -20,8 +20,8 @@ CI is the 95% Wilson interval. One control has no verdict from gpt-oss-20b (two 
 - **gpt-oss-20b** said "claims more" on 3 of 9 real overstated lines (33%) and on 3 of 13 controls (23%). Fewer false alarms, but it missed most overstatements.
 - On planted lines: Qwen 15 of 23 (65%), gpt-oss 11 of 23 (48%).
 - Per edit type, flag or ask a person: hedge removed 5 of 6, range cut to its upper end 4 of 5, sample size removed 3 of 3, scope phrase removed 7 of 9.
-- The two models gave the same verdict on 20 of 51 cases (39%, CI 27 to 53%).
-- Rerun of 19 cases: 36 of 37 valid verdict pairs repeated. The disagreement between the models is not run-to-run noise.
+- The two models gave the same verdict on 20 of 51 cases with both verdicts (39%, CI 27 to 53%), counting every kind of line, including weaker, ambiguous and reworded ones.
+- Rerun of 19 cases: 36 of 37 valid verdict pairs repeated. At temperature 0 on one server a repeat is expected; it shows only that the disagreement between the models is not run-to-run noise in this setup.
 - Weaker lines (3): each model called 1 of 3 "claims less". Qwen called one "claims more".
 
 ## Why the controls were flagged
@@ -44,7 +44,7 @@ The plan set no expectation for controls sent to a person. At 8 of 13 it is the 
 
 ## What this means for the tool
 
-- A two-model rule sends most lines to a person. On these cases it saves little reading.
+- A two-model rule sends most lines to a person. On these cases most lines still need reading; reading time was not measured.
 - The next version should see the whole paper, or several passages, per line, and test whether "detail not in this passage" then stops counting as overstatement.
 - It needs human labels. The labels here come from one model verifier, and some of the checker's false alarms may be the labeller's misses.
 - A stronger checker model, or a model tuned on labelled pairs, should be tried against the same cases.
@@ -57,6 +57,9 @@ The plan set no expectation for controls sent to a person. At 8 of 13 it is the 
 - The 23 planted edits come from 11 holding lines, up to four from one line, so they are not independent. Their intervals are too narrow.
 - Planted edits are rule-based; some drop a detail without widening the claim (listed in `cases/planted-diff.txt`). The 83% planted catch comes mostly from lines sent to a person (12 of 19).
 - Two small local models, one prompt, one setting each. It says nothing about larger models.
+- This repo does not record how the 29 lines were chosen from the notes, so they cannot be read as a random sample.
+- The labeller read the full papers; the checker saw 1 to 4 sentences. A line can hold against the paper and still look stronger than its passage.
+- Planted edits are easier than real overstatement, so the planted catch is an upper bound for real use (PLAN.md).
 - Retrieval was not tested.
 
 ## Sweep: other settings and models
@@ -87,4 +90,4 @@ The first run's answer was that the checker moves reading to a person instead of
 
 ### What the sweep cannot show
 
-Everything under "What this cannot show" above still holds, including that the 23 planted lines come from 11 holding lines and are not independent. Also: gpt-oss-20b at high effort ran out of tokens on a quarter of the cases, in unknown direction; GLM-4-32B and phi-4 ran with no reasoning setting; all arms ran on the same cases, so the arms are not independent samples.
+Everything under "What this cannot show" above still holds, including that the 23 planted lines come from 11 holding lines and are not independent. Also: gpt-oss-20b at high effort ran out of tokens on a quarter of the cases, in unknown direction; GLM-4-32B and phi-4 ran with no reasoning setting; the sweep allowed 8,000 output tokens where the first run allowed 4,000, so first-run and sweep rows of one model differ in more than reasoning; all arms ran on the same cases, so the arms are not independent samples.
